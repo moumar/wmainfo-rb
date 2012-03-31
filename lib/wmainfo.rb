@@ -320,6 +320,9 @@ class WmaInfo
   end
 
   def byte_string_to_guid(byteString)
+    if RUBY_VERSION[0..2] != "1.8"                                                                                                                                                                                                                                         
+      byteString = byteString.bytes.to_a                                                                                                                                                                                                                                   
+    end     
     guidString  = sprintf("%02X", byteString[3])
     guidString += sprintf("%02X", byteString[2])
     guidString += sprintf("%02X", byteString[1])
