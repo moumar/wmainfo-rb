@@ -20,7 +20,7 @@
 # Improved character encoding handling thanks to
 # Guillaume Pierronnet <guillaume.pierronnet @nospam@ gmail.com>
 
-require 'iconv'
+require 'iconv' if RUBY_VERSION.to_f < 1.9
 
 # raised when errors occur parsing wma header
 class WmaInfoError < StandardError
@@ -39,7 +39,8 @@ class WmaInfo
     @stream = {}
     @file = file
     @debug = opts[:debug]
-    @ic = Iconv.new(opts[:encoding] || "ASCII", "UTF-16LE")
+    @encoding = opts[:encoding] || "ASCII"
+    @ic = Iconv.new(@encoding, "UTF-16LE") if RUBY_VERSION.to_f < 1.9
     parse_wma_header
   end
 
@@ -310,7 +311,11 @@ class WmaInfo
 
   # UTF16LE -> ASCII
   def decode_binary_string(data)
-    @ic.iconv(data).strip
+    if RUBY_VERSION.to_f < 1.9
+      @ic.iconv(data).strip
+    else
+      data.to_s.encode(@encoding, "UTF-16LE")
+    end
   end
 
   def read_and_increment_offset(size)
