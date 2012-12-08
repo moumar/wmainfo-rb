@@ -1,7 +1,7 @@
 require 'rubygems'
 SPEC = Gem::Specification.new do |s|
-  s.name     = "wmainfo-rb"
-  s.version  = "0.7"
+  s.name     = "moumar-wmainfo-rb"
+  s.version  = "0.8"
   s.author   = "Darren Kirby"
   s.email    = "bulliver@badcomputer.org"
   s.homepage = "http://badcomputer.org/unix/code/wmainfo/"
