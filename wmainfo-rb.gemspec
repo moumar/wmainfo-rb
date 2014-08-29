@@ -1,15 +1,15 @@
 require 'rubygems'
 SPEC = Gem::Specification.new do |s|
-  s.name     = "moumar-wmainfo-rb"
-  s.version  = "0.8"
-  s.author   = "Darren Kirby"
-  s.email    = "bulliver@gmail.com"
-  s.homepage = "https://github.com/moumar/wmainfo-rb"
-  s.platform = Gem::Platform::RUBY
-  s.summary  = "Pure Ruby lib for accessing info/tags from wma/wmv files"
+  s.name        = "wmainfo-rb"
+  s.version     = "0.8"
+  s.authors     = ["Darren Kirby", "Guillaume Pierronnet"]
+  s.email       = "bulliver@gmail.com"
+  s.homepage    = "https://github.com/moumar/wmainfo-rb"
+  s.platform    = Gem::Platform::RUBY
+  s.summary     = "Pure Ruby lib for accessing info/tags from wma/wmv files"
   s.description = <<-EOF
 :: wmainfo-rb ::
-Author: Darren Kirby
+Authors: Darren Kirby, Guillaume Pierronnet
 mailto:bulliver@gmail.com
 License: Ruby
 
@@ -49,9 +49,8 @@ License: Ruby
    Ilmari Heikkinen sent in a fix for uninitialized '@ext_info'.
    Guillaume Pierronnet sent in a patch which improves character encoding handling.
 EOF
-  s.files    = ["README", "lib/wmainfo.rb"]
-  s.require_path     = "lib"
+  s.files            = ["README", "lib/wmainfo.rb"]
   s.has_rdoc         = true
   s.extra_rdoc_files = ["README"]
-  s.rubyforge_project = 'wmainfo-rb'
+  s.license          = "Ruby"
 end
