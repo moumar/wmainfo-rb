@@ -14,8 +14,8 @@
 # to Ruby. All credit for the hard work is owed to Dan...
 #
 # License:: Ruby
-# Author:: Darren Kirby (mailto:bulliver@badcomputer.org)
-# Website:: http://badcomputer.org/unix/code/wmainfo/
+# Author:: Darren Kirby (mailto:bulliver@gmail.com)
+# Website:: https://github.com/moumar/wmainfo-rb
 
 # Improved character encoding handling thanks to
 # Guillaume Pierronnet <guillaume.pierronnet @nospam@ gmail.com>
@@ -191,7 +191,7 @@ class WmaInfo
     @tags.delete_if { |k,v| v == "" || v == nil }
   end
 
-  def parse_asf_content_encryption_object 
+  def parse_asf_content_encryption_object
     @drm = 1
   end
 
@@ -325,9 +325,9 @@ class WmaInfo
   end
 
   def byte_string_to_guid(byteString)
-    if RUBY_VERSION[0..2] != "1.8"                                                                                                                                                                                                                                         
-      byteString = byteString.bytes.to_a                                                                                                                                                                                                                                   
-    end     
+    if RUBY_VERSION[0..2] != "1.8"
+      byteString = byteString.bytes.to_a
+    end
     guidString  = sprintf("%02X", byteString[3])
     guidString += sprintf("%02X", byteString[2])
     guidString += sprintf("%02X", byteString[1])

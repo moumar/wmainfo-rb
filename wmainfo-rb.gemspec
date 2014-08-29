@@ -3,14 +3,14 @@ SPEC = Gem::Specification.new do |s|
   s.name     = "moumar-wmainfo-rb"
   s.version  = "0.8"
   s.author   = "Darren Kirby"
-  s.email    = "bulliver@badcomputer.org"
-  s.homepage = "http://badcomputer.org/unix/code/wmainfo/"
+  s.email    = "bulliver@gmail.com"
+  s.homepage = "https://github.com/moumar/wmainfo-rb"
   s.platform = Gem::Platform::RUBY
   s.summary  = "Pure Ruby lib for accessing info/tags from wma/wmv files"
   s.description = <<-EOF
 :: wmainfo-rb ::
 Author: Darren Kirby
-mailto:bulliver@badcomputer.org
+mailto:bulliver@gmail.com
 License: Ruby
 
  = Quick API docs =
@@ -20,7 +20,7 @@ License: Ruby
   require 'wmainfo'
   foo = WmaInfo.new("someSong.wma")
      ... or ...
-  foo = WmaInfo.new("someVideo.wmv", :encoding=>"UTF-16LE") 
+  foo = WmaInfo.new("someVideo.wmv", :encoding=>"UTF-16LE")
   (default encoding is ASCII)
      ... or ...
    foo = WmaInfo.new("someVideo.wmv", :debug=>1)
@@ -44,9 +44,7 @@ License: Ruby
   print_info      :: pretty-print @info dict
   print_stream    :: pretty-print @stream dict
 
-  For more/different documentation see http://badcomputer.org/unix/code/wmainfo/
-
-  == Thanks/Contributors == 
+  == Thanks/Contributors ==
 
    Ilmari Heikkinen sent in a fix for uninitialized '@ext_info'.
    Guillaume Pierronnet sent in a patch which improves character encoding handling.
@@ -57,4 +55,3 @@ EOF
   s.extra_rdoc_files = ["README"]
   s.rubyforge_project = 'wmainfo-rb'
 end
-

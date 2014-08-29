@@ -1,6 +1,6 @@
 :: wmainfo-rb ::
 Author: Darren Kirby
-mailto:bulliver@badcomputer.org
+mailto:bulliver@gmail.com
 License: Ruby
 
  = Quick API docs =
@@ -10,7 +10,7 @@ License: Ruby
 require 'wmainfo'
 foo = WmaInfo.new("someSong.wma")
    ... or ...
-foo = WmaInfo.new("someVideo.wmv", :encoding=>"UTF-16LE") 
+foo = WmaInfo.new("someVideo.wmv", :encoding=>"UTF-16LE")
 (default encoding is ASCII)
    ... or ...
 foo = WmaInfo.new("someVideo.wmv", :debug=>1)
@@ -34,9 +34,7 @@ hasinfo?('str') :: returns True if @info['str'] exists
 print_info      :: pretty-print @info dict
 print_stream    :: pretty-print @stream dict
 
-For more/different documentation see http://badcomputer.org/unix/code/wmainfo/
-
- == Thanks/Contributors == 
+ == Thanks/Contributors ==
 
 Ilmari Heikkinen sent in a fix for uninitialized '@ext_info'.
 Guillaume Pierronnet sent in a patch which improves character encoding handling.
